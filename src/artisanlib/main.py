@@ -161,6 +161,7 @@ from artisanlib.suppress_errors import suppress_stdout_stderr
 
 with suppress_stdout_stderr():
     import matplotlib as mpl
+    #mpl.rc("font",family='Microsoft Sans Serif')
     from matplotlib import colormaps
     import matplotlib.colors as mcolors
 
@@ -7358,13 +7359,13 @@ class ApplicationWindow(QMainWindow):  # pyright: ignore [reportGeneralTypeIssue
                         mpl.rcParams['font.family'] = ['NanumGothic','DejaVu Sans Mono']
                     self.mpl_fontproperties = FontProperties()
                 else: # Windows:
-                    mpl.rcParams['font.family'] = ['Microsoft Sans Serif', 'Arial'] # works for Greek and Arabic
+                    mpl.rcParams['font.family'] = ['Microsoft YaHei', 'Arial'] # works for Greek and Arabic
                     self.mpl_fontproperties = FontProperties()
                     # for asian languages on Windows we have to set the parameters directly to *.ttc fonts (mpl supports only *.ttf)
                     if self.locale_str == 'ja':
                         self.set_mpl_fontproperties('C:\\Windows\\Fonts\\MSGOTHIC.ttc')
                     elif self.locale_str == 'zh_CN':
-                        self.set_mpl_fontproperties('C:\\Windows\\Fonts\\simsun.ttc')
+                        self.set_mpl_fontproperties('C:\\Windows\\Fonts\\msyh.ttc')
                     elif self.locale_str == 'zh_TW':
                         self.set_mpl_fontproperties('C:\\Windows\\Fonts\\mingliu.ttc')
                     elif self.locale_str == 'ko':
